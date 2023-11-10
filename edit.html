@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipes</title>
+</head>
+<body>
+    <section id="edit-recipe">
+        <form id="recipeForm">
+            <input type="text" placeholder="Name of the recipe" name="name" required>
+    <input type="text" placeholder="Image URL of the recipe" name="imageUrl" required>
+    <textarea rows="4" placeholder="Description of the recipe" name="description" required></textarea>
+    <input type="text" placeholder="Author name..." name="author" required>
+    <textarea id="ingredients" rows="4" placeholder="Ingredients (enter one ingredient per line)" name="ingredients" required></textarea>
+    <textarea rows="8" placeholder="Method of preparing the recipe" name="method" required></textarea>
+    <button type="button" onclick="editRecipe()">Edit</button>
+        </form>
+    </section>
+    <script src="./edit.js"></script>
+</body>
+</html>

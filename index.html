@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="reset.css"> 
+    <link rel="stylesheet" href="styles.css"> 
+  </head>
+  <body>
+    <header>
+      <nav>
+        <p class="logo">My Recipe Book</p>
+        <!-- Navigation links go here -->
+        <ul>
+          <li>
+            <a href="./add.html">Add New Recipes</a>
+          </li>
+        </ul>
+      </nav>
+      <section id="banner">
+        <!-- Banner section content goes here -->
+            <div>
+                <div class="bg"" alt="bg"></div>
+              <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 10px;">Discover Delicious Recipes</h1>
+              <p style="font-size: 1.2rem; margin-bottom: 20px;">Explore a variety of mouth-watering recipes that will satisfy your taste buds.</p>
+              <a href="#featured-recipes" class="explore">Explore Recipes</a>
+            </div>
+      </section>
+    </header>
+    <main>
+      <section id="search-recipes">
+          <input
+            type="text"
+            placeholder="Search recipes..."
+          />
+          <button>
+            Search
+          </button>
+      </section>
+      <section id="recipe-display">
+        <ul id="recipe-list">
+   
+        </ul>
+      </section>
+    </main>
+    <script type="module" src="./script.js"></script>
+    <script src="./remove.js"></script>
+  </body>
+</html>
+

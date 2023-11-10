@@ -1,0 +1,29 @@
+/* Custom CSS Reset */
+
+/* Apply a universal reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* Remove list styles (bullets and indentation) */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove underlines from links */
+a {
+    text-decoration: none;
+}
+
+/* Reset typography elements */
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+
