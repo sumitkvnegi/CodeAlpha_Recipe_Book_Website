@@ -93,8 +93,8 @@ async function getAllRecipes() {
             alt="Recipe Image"
         />
         <div class="tools">
-            <a href="./edit.html?id=${_id}" class="edit">✍</a>
-            <button class="delete" onclick="remove('${_id}')">🚮</button>
+            <a href="./edit.html?id=${_id}" class="edit"><img src="./edit.svg" alt="edit" width="20"/></a>
+            <button class="delete" onclick="remove('${_id}')"><img src="./trash.svg" alt="delete" width="20"/></button>
         </div>
     </div>
         <div class="info">

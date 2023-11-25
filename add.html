@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="add.css" />
     <title>Add New Recipes</title>
-</head>
-<body>
-    <section>
-        <img src="./images/no-preview.png" alt="preview" id="previewImage" width="300" >
-    </section>
-    <section id="add-recipe">
+  </head>
+  <body>
+    <div class="form">
+      <section class="img">
+        <div
+          id="previewImage"
+        />
+      </section>
+      <section id="add-recipe">
         <form id="recipeForm">
-            <input type="text" placeholder="Name of the recipe" name="name" required>
-    <input type="text" placeholder="Image URL of the recipe" name="imageUrl" onchange="preview()" required>
-    <textarea rows="4" placeholder="Description of the recipe" name="description" required></textarea>
-    <input type="text" placeholder="Author name..." name="author" required>
-    <textarea id="ingredients" rows="4" placeholder="Ingredients (enter one ingredient per line)" name="ingredients" required></textarea>
-    <textarea rows="8" placeholder="Method of preparing the recipe" name="method" required></textarea>
-    <button type="button" onclick="addRecipe()">Add</button>
+            <h1>Add New Recipes</h1>
+          <input
+            type="text"
+            placeholder="Name of the recipe"
+            name="name"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Image URL of the recipe"
+            name="imageUrl"
+            onchange="preview()"
+            required
+          />
+          <textarea
+            placeholder="Description of the recipe"
+            name="description"
+            required
+          ></textarea>
+          <input
+            type="text"
+            placeholder="Author name..."
+            name="author"
+            required
+          />
+          <textarea
+            id="ingredients"
+            placeholder="Ingredients (enter one ingredient per line)"
+            name="ingredients"
+            required
+          ></textarea>
+          <textarea
+            placeholder="Method of preparing the recipe"
+            name="method"
+            required
+          ></textarea>
+          <button type="button" onclick="addRecipe()">Add</button>
         </form>
-    </section>
+      </section>
+    </div>
     <script src="./add.js"></script>
-</body>
+  </body>
 </html>

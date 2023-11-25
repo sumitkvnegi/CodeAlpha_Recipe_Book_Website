@@ -46,42 +46,54 @@ app.post("/api/recipe", async (req, res) => {
 
 // Assuming you have the Recipe model and app instance set up as before
 
+
 app.put("/api/recipe/:id", async (req, res) => {
-    const recipeId = req.params.id;
-  
-    try {
+  const recipeId = req.params.id;
+
+  try {
       const {
-        name,
-        imageUrl,
-        description,
-        author,
-        ingredients,
-        method,
-      } = req.body;
-  
-      const updatedRecipe = await Recipe.findByIdAndUpdate(
-        recipeId,
-        {
           name,
           imageUrl,
           description,
           author,
-          ingredients: ingredients.split('\n').map(ingredient => ingredient.trim()),
+          ingredients,
           method,
-        },
-        { new: true } // Return the updated document
-      );
-  
-      if (!updatedRecipe) {
-        return res.status(404).send("Recipe not found");
+      } = req.body;
+
+      // Create an object to store the non-empty fields
+      const updateFields = {};
+
+      // Check and add each field to the updateFields object if it's not empty
+      if (name) updateFields.name = name;
+      if (imageUrl) updateFields.imageUrl = imageUrl;
+      if (description) updateFields.description = description;
+      if (author) updateFields.author = author;
+      if (ingredients) updateFields.ingredients = ingredients.split('\n').map(ingredient => ingredient.trim());
+      if (method) updateFields.method = method;
+
+      // Check if there are any fields to update
+      if (Object.keys(updateFields).length === 0) {
+          return res.status(400).send("No valid fields to update");
       }
-  
+
+      // Use the updateFields object in the update query
+      const updatedRecipe = await Recipe.findByIdAndUpdate(
+          recipeId,
+          updateFields,
+          { new: true } // Return the updated document
+      );
+
+      if (!updatedRecipe) {
+          return res.status(404).send("Recipe not found");
+      }
+
       res.status(200).json(updatedRecipe);
-    } catch (error) {
+  } catch (error) {
       console.error("Error updating recipe:", error);
       res.status(500).send("Error updating recipe");
-    }
-  });
+  }
+});
+
 
 app.get('/api/recipe', async (req, res) => {
     try {

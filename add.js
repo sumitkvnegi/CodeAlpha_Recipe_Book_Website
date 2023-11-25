@@ -8,7 +8,7 @@ function preview(){
 
   if(isValidUrl(imageUrlInput.value)){
     const previewImage = document.getElementById("previewImage");
-    previewImage.src = imageUrlInput.value;
+    previewImage.style.backgroundImage = `url(${imageUrlInput.value})`;
   }
 }
 
